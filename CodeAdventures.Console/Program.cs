@@ -1,14 +1,13 @@
 ﻿namespace CodeAdventures.Console
 {
     using System;
-    using ClassLib;
     using CodeAdventures.ClassLib.Interfaces;
 
     class Program
     {
         static void Main()
         {
-            IPrimeFinder primes = new PrimeFinder(N: 122);
+            IPrimeFinder primes = new PrimeFinderOptimized(N: 1000000);
 
             Console.WriteLine(string.Join(", ", primes.GetAllPrimes()));
 
