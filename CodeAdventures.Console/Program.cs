@@ -2,14 +2,15 @@
 {
     using System;
     using ClassLib;
+    using CodeAdventures.ClassLib.Interfaces;
 
     class Program
     {
         static void Main()
         {
-            AllPrimesUpToN primes = new AllPrimesUpToN(N: 1);
+            IPrimeFinder primes = new PrimeFinder(N: 122);
 
-            Console.WriteLine(string.Join(", ", primes.GetBiggestPrime()));
+            Console.WriteLine(string.Join(", ", primes.GetAllPrimes()));
 
             Console.WriteLine("Press any key to quit.");
             Console.ReadKey();
