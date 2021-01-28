@@ -54,8 +54,10 @@
 
         private bool IsPrime(int number)
         {
-            foreach (int prime in primes)
+            //We skip number 2 and 3 from checking, since we don't need it based on the 6 step idea.
+            for (int i = 2; i < primes.Count; i++)
             {
+                int prime = primes[i];
                 //If we can't find a prime divisor below the square root of the number, then we won't find above. (src: https://www.youtube.com/watch?v=lJ3CD9M3nEQ)
                 if (prime > Math.Sqrt(upperLimit))
                 {
