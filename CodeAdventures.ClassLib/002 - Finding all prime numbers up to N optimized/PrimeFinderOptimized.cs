@@ -1,6 +1,7 @@
 ﻿namespace CodeAdventures
 {
     using CodeAdventures.ClassLib.Interfaces;
+    using System;
     using System.Collections.Generic;
 
     public class PrimeFinderOptimized : IPrimeFinder
@@ -55,8 +56,8 @@
         {
             foreach (int prime in primes)
             {
-                //A numbers greatest divisor equals to the half of the number, so we don't have to check anything above that.
-                if (prime > upperLimit / 2)
+                //If we can't find a prime divisor below the square root of the number, then we won't find above. (src: https://www.youtube.com/watch?v=lJ3CD9M3nEQ)
+                if (prime > Math.Sqrt(upperLimit))
                 {
                     break;
                 }
@@ -75,7 +76,7 @@
         private void PopulatePrimesList()
         {
             //Every prime above 3 takes place next to a multiple of 6 (src: https://youtu.be/ZMkIiFs35HQ).
-            for (int i = 6; i < upperLimit; i += 6)
+            for (int i = 6; i <= upperLimit; i += 6)
             {
                 int lower = i - 1;
                 int higher = i + 1;

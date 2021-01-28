@@ -7,9 +7,9 @@
     {
         static void Main()
         {
-            IPrimeFinder primes = new PrimeFinderOptimized(N: 1000000);
+            IPrimeFinder primes = new PrimeFinderOptimized(N: 10000000);
 
-            Console.WriteLine(string.Join(", ", primes.GetAllPrimes()));
+            Console.WriteLine(primes.GetAllPrimes().Count);
 
             Console.WriteLine("Press any key to quit.");
             Console.ReadKey();
