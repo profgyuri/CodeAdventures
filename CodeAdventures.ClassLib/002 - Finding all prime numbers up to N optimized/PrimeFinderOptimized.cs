@@ -1,4 +1,4 @@
-﻿namespace CodeAdventures
+﻿namespace CodeAdventures.ClassLib
 {
     using CodeAdventures.ClassLib.Interfaces;
     using System;
@@ -13,7 +13,7 @@
         {
             if (N < 2)
             {
-                throw new System.ArgumentException(message: "The upper limit cannot be less than 2!");
+                throw new ArgumentException(message: "The upper limit cannot be less than 2!");
             }
 
             upperLimit = N;
